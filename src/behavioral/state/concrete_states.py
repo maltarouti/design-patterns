@@ -1,0 +1,23 @@
+from state import State
+
+
+class ConcreteStateA(State):
+    def handle1(self) -> None:
+        print("ConcreteStateA handles request 1")
+
+    def handle2(self) -> None:
+        print("ConcreteStateA handles request 2")
+
+    def change_state(self, state: State) -> None:
+        self._context.change_state(state)
+
+
+class ConcreteStateB(State):
+    def handle1(self) -> None:
+        print("ConcreteStateB handles request 1")
+
+    def handle2(self) -> None:
+        print("ConcreteStateB handles request 2")
+
+    def change_state(self, state: State) -> None:
+        self._context.change_state(state)
