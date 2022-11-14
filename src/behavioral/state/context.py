@@ -1,9 +1,14 @@
 from state import State
 
+from concrete_states import ConcreteStateA
+from concrete_states import ConcreteStateB
+
 
 class Context:
     def __init__(self) -> None:
         self._current_state: State | None = None
+        self.state_a = ConcreteStateA(self)
+        self.state_b = ConcreteStateB(self)
 
     def change_state(self, state: State) -> None:
         self._current_state = state

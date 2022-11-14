@@ -7,9 +7,8 @@ class ConcreteStateA(State):
 
     def handle2(self) -> None:
         print("ConcreteStateA handles request 2")
-
-    def change_state(self, state: State) -> None:
-        self._context.change_state(state)
+        print("ConcreteStateA is changing to ConcreteStateB")
+        self.context.change_state(self.context.state_b)
 
 
 class ConcreteStateB(State):
@@ -18,6 +17,5 @@ class ConcreteStateB(State):
 
     def handle2(self) -> None:
         print("ConcreteStateB handles request 2")
-
-    def change_state(self, state: State) -> None:
-        self._context.change_state(state)
+        print("ConcreteStateB is changing to ConcreteStateA")
+        self.context.change_state(self.context.state_a)
