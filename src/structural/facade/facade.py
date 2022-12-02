@@ -17,7 +17,7 @@ class Facade:
         results.append(self.system2.operation1())
         results.append(self.system2.operation2())
         results.append(self.system2.operation3())
-        
+
         print(f"processed {len(results)} operations")
 
         return "\n".join(results)
